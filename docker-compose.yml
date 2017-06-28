@@ -1,0 +1,16 @@
+app:
+  build: ./docker
+  volumes:
+    - ./page:/var/www/html
+  ports:
+    - "8080:80"
+  links:
+    - mysql
+
+mysql:
+  image: mysql
+  volumes:
+   -  ./data:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=typo3page
