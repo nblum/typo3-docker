@@ -22,7 +22,7 @@ RUN apt-get update && \
       php7.1-xsl \
       php7.1-zip \
       php7.1-soap && \
-      && apt-get upgrade -yfq && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+      apt-get upgrade -yfq && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
       
 #Apache config
 RUN mkdir -p /var/www/html/web/
